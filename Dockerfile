@@ -8,7 +8,8 @@ RUN apk add --no-cache \
     gcc \
     libc-dev \
     python3-dev \
-    musl-dev
+    musl-dev \
+    bash
 
 WORKDIR /app
 
@@ -28,4 +29,4 @@ COPY --from=build /usr/local/lib/python3.12/site-packages /usr/local/lib/python3
 
 COPY . .
 
-CMD ["/bin/ash", "surf-tg.sh"]
+CMD ["/bin/bash", "surf-tg.sh"]
